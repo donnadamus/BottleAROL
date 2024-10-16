@@ -1,4 +1,15 @@
 # BottleAROL
+
+## Set Virtual Environment
+
+```
+# Create a virtual environment
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+```
+
 ## Project Architecture
 
 ![Project Architecture](docs/images/architecture.png)
