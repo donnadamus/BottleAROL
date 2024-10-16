@@ -1,0 +1,1 @@
+Scripts for data collection and processing are kept in this directory.
