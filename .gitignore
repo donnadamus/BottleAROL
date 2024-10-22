@@ -1,5 +1,4 @@
 # Virtual environment
-venv/
-.env/
-src/notebooks/CAP-2-4/
-runs/
+/env
+/data/train
+/data/valid

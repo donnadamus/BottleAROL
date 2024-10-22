@@ -1,1 +1,0 @@
-Both raw and processed data are stored here. The medallion architecture is preferred for categorizing datasets.  
