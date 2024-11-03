@@ -1,23 +1,10 @@
-//  Ultralytics YOLO 🚀 - AGPL-3.0 License
-//
-//  Main View Controller for Ultralytics YOLO App
-//  This file is part of the Ultralytics YOLO app, enabling real-time object detection using YOLOv8 models on iOS devices.
-//  Licensed under AGPL-3.0. For commercial use, refer to Ultralytics licensing: https://ultralytics.com/license
-//  Access the source code: https://github.com/ultralytics/yolo-ios-app
-//
-//  This ViewController manages the app's main screen, handling video capture, model selection, detection visualization,
-//  and user interactions. It sets up and controls the video preview layer, handles model switching via a segmented control,
-//  manages UI elements like sliders for confidence and IoU thresholds, and displays detection results on the video feed.
-//  It leverages CoreML, Vision, and AVFoundation frameworks to perform real-time object detection and to interface with
-//  the device's camera.
-
 import AVFoundation
 import CoreML
 import CoreMedia
 import UIKit
 import Vision
 
-var mlModel = try! yolov8m(configuration: .init()).model
+var mlModel = try! best(configuration: .init()).model
 
 class ViewController: UIViewController {
   @IBOutlet var videoPreview: UIView!
@@ -140,20 +127,8 @@ class ViewController: UIViewController {
     /// Switch model
     switch segmentedControl.selectedSegmentIndex {
     case 0:
-      self.labelName.text = "YOLOv8n"
-      mlModel = try! yolov8n(configuration: .init()).model
-    case 1:
-      self.labelName.text = "YOLOv8s"
-      mlModel = try! yolov8s(configuration: .init()).model
-    case 2:
-      self.labelName.text = "YOLOv8m"
-      mlModel = try! yolov8m(configuration: .init()).model
-    case 3:
-      self.labelName.text = "YOLOv8l"
-      mlModel = try! yolov8l(configuration: .init()).model
-    case 4:
-      self.labelName.text = "YOLOv8x"
-      mlModel = try! yolov8x(configuration: .init()).model
+      self.labelName.text = "YOLOv11"
+      mlModel = try! best(configuration: .init()).model
     default:
       break
     }
@@ -222,7 +197,7 @@ class ViewController: UIViewController {
   }
 
   func setLabels() {
-    self.labelName.text = "YOLOv8m"
+    self.labelName.text = "YOLOv11"
     self.labelVersion.text = "Version " + UserDefaults.standard.string(forKey: "app_version")!
   }
 
@@ -522,7 +497,8 @@ class ViewController: UIViewController {
         // The labels array is a list of VNClassificationObservation objects,
         // with the highest scoring class first in the list.
         let bestClass = prediction.labels[0].identifier
-        let confidence = prediction.labels[0].confidence
+        // let confidence = prediction.labels[0].confidence
+          let confidence = prediction.confidence
         // print(confidence, rect)  // debug (confidence, xywh) with xywh origin top left (pixels)
         let label = String(format: "%@ %.1f", bestClass, confidence * 100)
         let alpha = CGFloat((confidence - 0.2) / (1.0 - 0.2) * 0.9)
