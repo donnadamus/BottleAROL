@@ -1,13 +1,13 @@
-train: ./train/images
-val: ./valid/images
-test: ./test/images
+train: ../train/images
+val: ../valid/images
+test: ../test/images
 
-nc: 2
-names: ['Defect', 'Good']
+nc: 1
+names: ['good_cap']
 
 roboflow:
-  workspace: sombat-techasomboonsuk-wqfsf
-  project: cap-detection-cap-defect
-  version: 2
+  workspace: bottlecapproject-dyaxy
+  project: bottle_cap_sdp
+  version: 5
   license: CC BY 4.0
-  url: https://universe.roboflow.com/sombat-techasomboonsuk-wqfsf/cap-detection-cap-defect/dataset/2
+  url: https://universe.roboflow.com/bottlecapproject-dyaxy/bottle_cap_sdp/dataset/5
