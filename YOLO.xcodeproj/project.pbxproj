@@ -34,7 +34,6 @@
 		63B8B0A821E62A890026FBC3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7BCB411721C3096100BFC4D0 /* YOLO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOLO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDAA633C1F2B50286D16008 /* BoundingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxView.swift; sourceTree = "<group>"; };
-		8EDAAA4507D2D23D7FAB827F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DF17A2EF2CD72176004975A8 /* best.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = best.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +86,6 @@
 		7BCB410E21C3096100BFC4D0 = {
 			isa = PBXGroup;
 			children = (
-				8EDAAA4507D2D23D7FAB827F /* README.md */,
 				636EFC9B21E62DD300DE43BC /* YOLO */,
 				63B8B0A821E62A890026FBC3 /* .gitignore */,
 				7BCB411821C3096100BFC4D0 /* Products */,
