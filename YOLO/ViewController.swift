@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     setUpBoundingBoxViews()
     setUpOrientationChangeNotification()
     startVideo()
-    // setModel()
+    setModel()
   }
 
   override func viewWillTransition(
