@@ -2,12 +2,12 @@ train: ../train/images
 val: ../valid/images
 test: ../test/images
 
-nc: 1
-names: ['good_cap']
+nc: 6
+names: ['damaged_cap', 'good_cap', 'misplaced_cap', 'no_cap', 'open_cap', 'wet_cap']
 
 roboflow:
   workspace: bottlecapproject-dyaxy
   project: bottle_cap_sdp
-  version: 5
+  version: 7
   license: CC BY 4.0
-  url: https://universe.roboflow.com/bottlecapproject-dyaxy/bottle_cap_sdp/dataset/5
+  url: https://universe.roboflow.com/bottlecapproject-dyaxy/bottle_cap_sdp/dataset/7

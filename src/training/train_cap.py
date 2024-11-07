@@ -2,9 +2,12 @@ from ultralytics import YOLO
 
 
 
-def train(epochs, imgsz, device, datapath):
+def train(epochs, imgsz, device, datapath, pretrained=None):
     # Load a model
-    model = YOLO("../models/yolo11n.pt")
+    if pretrained:
+        model = YOLO(pretrained)
+    else:
+        model = YOLO("../models/yolo11n.pt")
     
     # Train the model
     train_results = model.train(
