@@ -4,7 +4,7 @@ import CoreMedia
 import UIKit
 import Vision
 
-var mlModel = try! best(configuration: .init()).model
+var mlModel = try! pretrainedCoco(configuration: .init()).model
 
 class ViewController: UIViewController {
   @IBOutlet var videoPreview: UIView!
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
     switch segmentedControl.selectedSegmentIndex {
     case 0:
       self.labelName.text = "YOLOv11"
-      mlModel = try! best(configuration: .init()).model
+      mlModel = try! pretrainedCoco(configuration: .init()).model
     default:
       break
     }
@@ -265,16 +265,26 @@ class ViewController: UIViewController {
     guard let classLabels = mlModel.modelDescription.classLabels as? [String] else {
       fatalError("Class labels are missing from the model description")
     }
+      
+      if colors["good_cap"] == nil {
+          colors["good_cap"] = UIColor(
+            red: 0.0,
+            green: 1.0,
+            blue: 0.0,
+            alpha: 0.6
+          )
+      }
 
     // Assign random colors to the classes.
     for label in classLabels {
-      if colors[label] == nil {  // if key not in dict
-        colors[label] = UIColor(
-          red: CGFloat.random(in: 0...1),
-          green: CGFloat.random(in: 0...1),
-          blue: CGFloat.random(in: 0...1),
-          alpha: 0.6)
-      }
+        if colors[label] == nil {
+            colors[label] = UIColor(
+              red: 1.0,
+              green: 0.0,
+              blue: 0.0,
+              alpha: 0.6
+            )
+        }
     }
   }
 

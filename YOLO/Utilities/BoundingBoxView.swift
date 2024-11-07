@@ -59,7 +59,7 @@ class BoundingBoxView {
     textLayer.string = label  // Set the label text
     textLayer.backgroundColor = color.withAlphaComponent(alpha).cgColor  // Apply color and alpha to the background
     textLayer.isHidden = false  // Make the text layer visible
-    textLayer.foregroundColor = UIColor.white.withAlphaComponent(alpha).cgColor  // Set text color
+      textLayer.foregroundColor = UIColor.black.withAlphaComponent(alpha).cgColor  // Set text color
 
     // Calculate the text size and position based on the label content
     let attributes = [NSAttributedString.Key.font: textLayer.font as Any]
