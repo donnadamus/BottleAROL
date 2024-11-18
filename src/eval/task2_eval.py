@@ -6,7 +6,8 @@ from torch.utils.data import DataLoader, Dataset
 import torchvision.transforms as transforms
 import os
 from PIL import Image
-from task2_utils import *
+from src.models.vit_regressor import ViTRegression
+from src.utils.task2_utils import *
 
 
 # Transforms

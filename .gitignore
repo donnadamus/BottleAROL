@@ -4,3 +4,5 @@
 /data/train
 /data/valid
 /data/test
+# remove pycache files
+*.pyc

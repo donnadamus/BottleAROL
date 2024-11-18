@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from timm import create_model
+import pytorch_lightning as pl
 
 # Define the custom PyTorch Lightning model
 class ViTRegression(pl.LightningModule):
