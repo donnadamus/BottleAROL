@@ -1,14 +1,3 @@
-"""
-!gdown --id 1JIpccI_hh8L5Rr_yf81cSXA3__K0fXVn
-
-!unzip /content/dataset_label.zip -d /content
-
-# !unzip /content/drive/MyDrive/PROJECT\ SDP/dataset_label.zip -d /content
-
-!pip install pytorch_lightning
-
-"""
-
 import pytorch_lightning as pl
 import torch
 import torch.nn as nn
@@ -17,7 +6,7 @@ from torch.utils.data import DataLoader, Dataset
 import torchvision.transforms as transforms
 import os
 from PIL import Image
-from task2_utils import *
+from src.utils.task2_utils import *
 
 
 # Dataset and DataLoader
