@@ -1,12 +1,4 @@
 ### EVALUATION CODE
-
-"""
-
-!gdown --id 13R5JajJ4oh_enkRjfs2fThITGsIMlFX8
-
-!unzip /content/test_set.zip -d /content
-
-"""
 import torch
 import torch.nn as nn
 from timm import create_model
@@ -14,7 +6,7 @@ from torch.utils.data import DataLoader, Dataset
 import torchvision.transforms as transforms
 import os
 from PIL import Image
-from utils.task2_utils import *
+from task2_utils import *
 
 
 # Transforms
@@ -25,7 +17,7 @@ transform = transforms.Compose([
 ])
 
 # Dataset and DataLoader
-root_dir = "/content/test_set"  # Replace with your dataset path
+root_dir = "/Users/marcodonnarumma/Desktop/BottleAROL/data/test_set"  # Replace with your dataset path
 dataset = BottleRotationDataset(root_dir=root_dir, transform=transform)
 dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
@@ -39,13 +31,13 @@ import torchvision.transforms as transforms
 from PIL import Image, ImageDraw, ImageFont
 
 # Ensure the output directory exists
-output_dir = "/content/predictions"
+output_dir = "/Users/marcodonnarumma/Desktop/BottleAROL/data/predictions_task2"
 os.makedirs(output_dir, exist_ok=True)
 
 # Function to make predictions, save images with labels, and return predictions and targets
 def predict_and_save_images(model, dataloader, output_dir):
     model.eval()  # Set the model to evaluation mode
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("mps" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
     all_predictions = []  # Store all predictions
